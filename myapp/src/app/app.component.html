@@ -1,0 +1,19 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<p (click)="changeColor('blue')" [style.color]="mycolor" >
+  header Works!
+  Hello {{user.name}}!
+</p>
+<!-- <input type="text" (input)="changeColor($event.target.value)" (keydown.control.enter)="changeColor('green')">  -->
+<input type="text" #colorElement> 
+
+<button (click)="changeColor(colorElement.value)">changeColor</button>
+
+<button (click)="isShown = !isShown">Show/Hide</button>
+
+<app-header *ngIf="isShown" [user]="user"></app-header>
+
+<ul>
+  <li *ngFor="let user of users">
+    {{user.name}}
+  </li>
+</ul>
